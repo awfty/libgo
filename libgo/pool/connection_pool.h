@@ -47,7 +47,7 @@ public:
     // @nConnection: 连接数量, 大于maxIdleConnection_的部分无效
     void Reserve(size_t nConnection)
     {
-        for (size_t i = Count(); i < maxIdleConnection_ && i < nConnection; ++i)
+        for (size_t i = Count(); i < maxIdleConnection_; ++i)
         {
             Connection* connection = CreateOne();
             if (!connection) break;
